@@ -1,0 +1,13 @@
+﻿<ResourceDictionary xmlns="http://schemas.microsoft.com/winfx/2006/xaml/presentation"
+                    xmlns:x="http://schemas.microsoft.com/winfx/2006/xaml"
+                    xmlns:te="clr-namespace:OsuChat.Core">
+    <Style TargetType="TextBlock" x:Key="LastMessageTimeFormat">
+        <Setter Property="Text" Value="{Binding Time, StringFormat={}{0:HH:mm}}"/>
+
+        <Style.Triggers>
+            <DataTrigger Binding="{Binding IsLastMessageToday}" Value="False">
+                <Setter Property="Text" Value="{Binding Time, StringFormat={}{0:dd.MM.yyyy}}"/>
+            </DataTrigger>
+        </Style.Triggers>
+    </Style>
+</ResourceDictionary>
