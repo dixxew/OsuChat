@@ -1,0 +1,91 @@
+﻿<UserControl x:Class="OsuChat.MVVM.View.RegControl"
+             xmlns="http://schemas.microsoft.com/winfx/2006/xaml/presentation"
+             xmlns:x="http://schemas.microsoft.com/winfx/2006/xaml"
+             xmlns:mc="http://schemas.openxmlformats.org/markup-compatibility/2006" 
+             xmlns:d="http://schemas.microsoft.com/expression/blend/2008" 
+             xmlns:local="clr-namespace:OsuChat.MVVM.View"
+             mc:Ignorable="d" 
+             d:DesignHeight="450" d:DesignWidth="800"
+             Visibility="{Binding Visibility}">
+    <Grid Background="#FF404040">
+        <Grid.ColumnDefinitions>
+            <ColumnDefinition Width="1*"/>
+            <ColumnDefinition Width="3*"/>
+            <ColumnDefinition Width="1*"/>
+        </Grid.ColumnDefinitions>
+        <Grid.RowDefinitions>
+            <RowDefinition Height="1*"/>
+            <RowDefinition Height="5*"/>
+            <RowDefinition Height="1*"/>
+        </Grid.RowDefinitions>
+        <Label Grid.Column="1"
+               Content="OsuChat"
+               FontSize="24"
+               Foreground="White"
+               HorizontalAlignment="Center"
+               VerticalAlignment="Center"/>
+        <StackPanel Grid.Row="1" Grid.Column="1" Orientation="Vertical">
+            <Label Grid.Column="1"
+               Content="Register"
+               FontSize="16"
+               Foreground="#FFD8D8D8"
+               HorizontalAlignment="Center"
+               VerticalAlignment="Center"
+                   Margin="0,-10,0,-5"/>
+            <Grid>
+                <Grid.ColumnDefinitions>
+                    <ColumnDefinition/>
+                    <ColumnDefinition/>
+                </Grid.ColumnDefinitions>
+                <TextBox Text="{Binding Name,  Mode=TwoWay, UpdateSourceTrigger=PropertyChanged}"
+                                     Height="50"
+                                     Style="{StaticResource NameBox}"
+                                     />
+                <TextBox Text="{Binding Email,  Mode=TwoWay, UpdateSourceTrigger=PropertyChanged}"
+                                     Height="50"
+                                     Style="{StaticResource EmailBox}"
+                         Grid.Column="1"
+                                     />
+            </Grid>
+            <Grid>
+                <Grid.ColumnDefinitions>
+                    <ColumnDefinition/>
+                    <ColumnDefinition/>
+                </Grid.ColumnDefinitions>
+                <TextBox Text="{Binding Password,  Mode=TwoWay, UpdateSourceTrigger=PropertyChanged}"
+                                     Height="50"
+                                     Style="{StaticResource PassBox}"
+                                     />
+                <TextBox Text="{Binding ConfirmPassword,  Mode=TwoWay, UpdateSourceTrigger=PropertyChanged}"
+                                     Height="50"
+                                     Style="{StaticResource PassConfirmBox}"
+                         Grid.Column="1"
+                                     />
+            </Grid>
+            <Grid Cursor="Hand">
+                <Grid.ColumnDefinitions>
+                    <ColumnDefinition Width="1*"/>
+                    <ColumnDefinition Width="3*"/>
+                    <ColumnDefinition Width="1*"/>
+                </Grid.ColumnDefinitions>
+                <StackPanel Orientation="Vertical" Grid.Column="1">
+                    <Button Style="{StaticResource CornerButton}"
+                            Command="{Binding LogInCommand}"
+                            Content="Create new account"
+                            Height="40" 
+                            FontSize="16" 
+                            Cursor="Hand"
+                            Margin="0,30,0,0"/>
+                    <Button  Height="25"                              
+                             Content="I have an acc..."
+                             FontSize="14"
+                             Foreground="DarkGray" Cursor="Hand"
+                             Command="{Binding ToAuthCommand}"
+                             Margin="0,8,0,0"
+                             Style="{StaticResource NoBgButton}"/>
+                </StackPanel>
+            </Grid>
+        </StackPanel>
+
+    </Grid>
+</UserControl>

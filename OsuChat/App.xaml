@@ -2,17 +2,26 @@
              xmlns="http://schemas.microsoft.com/winfx/2006/xaml/presentation"
              xmlns:x="http://schemas.microsoft.com/winfx/2006/xaml"
              xmlns:local="clr-namespace:OsuChat"
-             StartupUri="MainWindow.xaml">
+             xmlns:viewModel="clr-namespace:OsuChat.MVVM.ViewModel">
     <Application.Resources>
         <ResourceDictionary>
             <ResourceDictionary.MergedDictionaries>
+                <ResourceDictionary Source="./Themes/Auth/NameBox.xaml"/>
+                <ResourceDictionary Source="./Themes/Auth/EmailBox.xaml"/>
+                <ResourceDictionary Source="./Themes/Auth/PassBox.xaml"/>
+                <ResourceDictionary Source="./Themes/Auth/PassConfrimBox.xaml"/>
+
                 <ResourceDictionary Source="./Themes/LastMessageTimeFormat.xaml"/>
                 <ResourceDictionary Source="./Themes/MessageTime.xaml"/>
                 <ResourceDictionary Source="./Themes/UserCard.xaml"/>
                 <ResourceDictionary Source="./Themes/ChatItem.xaml"/>
                 <ResourceDictionary Source="./Themes/MessageBox.xaml"/>
                 <ResourceDictionary Source="./Themes/StylishScrollbar.xaml"/>
+                <ResourceDictionary Source="./Themes/CornerButton.xaml"/>
+                <ResourceDictionary Source="./Themes/NoBgButton.xaml"/>
             </ResourceDictionary.MergedDictionaries>
+
+            
         </ResourceDictionary>
     </Application.Resources>
 </Application>

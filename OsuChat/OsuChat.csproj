@@ -10,11 +10,17 @@
   <ItemGroup>
     <Folder Include="Infrastructure\DAL\" />
     <Folder Include="Icons\" />
-    <Folder Include="MVVM\View\" />
   </ItemGroup>
 
   <ItemGroup>
     <PackageReference Include="Microsoft.AspNetCore.SignalR.Client" Version="7.0.0" />
+    <PackageReference Include="Microsoft.Extensions.Hosting" Version="6.0.1" />
+  </ItemGroup>
+
+  <ItemGroup>
+    <Compile Update="MVVM\View\RegControl.xaml.cs">
+      <SubType>Code</SubType>
+    </Compile>
   </ItemGroup>
 
 </Project>

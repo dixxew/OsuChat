@@ -1,22 +1,10 @@
-﻿using System;
-using System.Collections.Generic;
-using System.Linq;
-using System.Text;
-using System.Threading.Tasks;
+﻿namespace OsuChat.MVVM.Model;
 
-namespace OsuChat.MVVM.Model
+public class Profile
 {
-    internal class Profile
-    {
-        public int Id { get; set; }
-        public string Name { get; set; }
-        public string ImageSource { get; set; }
-
-        public Profile()
-        {
-            Id = 0;
-            ImageSource = "";
-            Name = "Dixxew";
-        }
-    }
+    public bool IsAuthorized { get; set; } = false;
+    public string? Id { get; set; }
+    public string? Name { get; set; }
+    public string? ImageSource { get; set; } = "https://hownot2code.files.wordpress.com/2016/07/ms-net.png";
+    public string? Token { get; set; }
 }
