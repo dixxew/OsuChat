@@ -25,7 +25,6 @@ namespace ChatWebServer.Hubs
             var connectionId = Context.ConnectionId;
             _chatManager.ConnectUser(userName, connectionId);
             await Groups.AddToGroupAsync(connectionId, _defaultGroupName);
-            await UpdateUsersAsync();
             await base.OnConnectedAsync();
         }
 
@@ -40,7 +39,6 @@ namespace ChatWebServer.Hubs
             }
 
             await Groups.RemoveFromGroupAsync(Context.ConnectionId, _defaultGroupName);
-            await UpdateUsersAsync();
             await base.OnDisconnectedAsync(exception);
         }
         
@@ -53,6 +51,6 @@ namespace ChatWebServer.Hubs
         }     
         
         public async Task SendMessageAsync(int chat_id, int from_id, int to_id, string message_text, DateTime time) => 
-            await Clients.All.SendMessageAsync(userName, message);
+            await Clients.All.SendMessageAsync("","");
     }
 }

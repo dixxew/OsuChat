@@ -9,8 +9,6 @@ namespace ChatWebServer.DAL
         public ApplicationContext(DbContextOptions options)
         : base(options)
         {
-        }
-        
-        public DbSet<Employee> Employees { get; set; }
+        }        
     }
 }
