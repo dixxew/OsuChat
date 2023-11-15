@@ -24,13 +24,10 @@ Storage:
 ## At the moment
 
 Client
-- The basic interface has been developed
-- Preliminary data models have been developed
-- The ability to send a message to the server
-- Output of returned messages to the chat
-Server
+- Auth pages, Chat page, Side menu developed
+- Base navigation
+- Preliminary data models have been developed (may reworked)
+- The ability to send a message to the server(reworking)
+Server 
 - A single hub has been created
 - Preliminary data models for mssql and mongo have been developed
-
-
- 
